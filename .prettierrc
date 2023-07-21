@@ -1,0 +1,6 @@
+{
+  "printWidth": 200,
+  "arrowParens": "always",
+  "semi": true,
+  "singleQuote": true
+}
