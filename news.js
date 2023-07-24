@@ -12,5 +12,5 @@ function listHeadlines(url, title, selector) {
       titles.forEach((text) => console.log(`* ${text}`));
     });
 }
-listHeadlines('https://www.reuters.com/news/archive/worldNews', 'Reuters', 'h3.story-title');
+listHeadlines('https://www.reuters.com/news/archive/worldNews', 'Reuters', 'h3[data-testid="Heading"] > a');
 listHeadlines('https://hvg.hu/', 'HVG', '.h500.articlebox h1.heading-3');

@@ -2,6 +2,8 @@
 const { JSDOM } = require('jsdom');
 const _ = require('lodash');
 const chalk = require('chalk');
+const { splitToLines } = require('./src/utils');
+
 const ua = 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0';
 const url = 'https://magyarnarancs.hu/';
 const topicWhitelist = ['Külpol', 'Belpol'];
@@ -9,21 +11,6 @@ const topicWhitelist = ['Külpol', 'Belpol'];
 const getText = (el, sel) => {
   const foundEl = el.querySelector(sel);
   return (foundEl ? foundEl.textContent.trim() : '').replace(/\s+/g, ' ');
-};
-
-const splitToLines = (text, max = 80, prepend = '  ') => {
-  const lines = [];
-  const words = text.split(/\s+/);
-  let line = '';
-  words.forEach((word) => {
-    if ((line + ' ' + word).length > max) {
-      lines.push(line);
-      line = '';
-    }
-    line += ' ' + word;
-  });
-  if (line) lines.push(line);
-  return lines.map((line) => `${prepend}${line.trim()}`).join('\n');
 };
 
 function onContent(text = '') {
