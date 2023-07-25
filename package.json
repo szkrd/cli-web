@@ -4,7 +4,7 @@
   "description": "",
   "main": "news.js",
   "scripts": {
-    "install": "node scripts/install.js"
+    "setup": "node scripts/install.js"
   },
   "keywords": [],
   "author": "",
