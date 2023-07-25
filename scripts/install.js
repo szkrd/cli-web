@@ -8,7 +8,7 @@ if (process.platform === 'win32') {
 } else if (process.platform === 'linux') {
   createCmd = (fn) => {
     sh.echo(`#!/usr/bin/env bash\nnode ${appDir}${fn}.js`).to(`~/bin/${fn}`);
-    chmod('u+x', `~/bin/${fn}`);
+    sh.chmod('u+x', `~/bin/${fn}`);
   };
 } else process.exit(1);
 sh.ls(appDir)
